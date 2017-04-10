@@ -23,6 +23,91 @@ composer require buuum/appcompile
 You may use your own autoloader as long as it follows PSR-0 or PSR-4 standards. Just put src directory contents in your vendor directory.
  
 
+## Initialize Config
+
+```
+php vendor/bin/compile init
+```
+
+file generated compile.yml
+
+```yaml
+paths:
+  temp: _tmp
+  cache: temp/assets
+  assets:
+    root: httpdocs/assets
+
+compiler_paths:
+  compile1:
+    name: default
+    dest: app/public2
+    files:
+      root: app/_gen
+      coffee: app/_gen/coffee
+      haml: app/_gen/views
+      sass: app/_gen/sass
+    assets:
+      root: httpdocs/assets
+      css: httpdocs/assets/css
+      js: httpdocs/assets/js
+      imgsdir: httpdocs/assets/imgs
+  compile2:
+    name: Web
+    dest: app/Web/public2
+    files:
+      root: app/_gen
+      coffee: app/Web/_gen/coffee
+      haml: app/Web/_gen/views
+      sass: app/Web/_gen/sass
+    assets:
+      root: httpdocs/assets/Web
+      css: httpdocs/assets/Web/css
+      js: httpdocs/assets/Web/js
+      imgsdir: httpdocs/assets/Web/imgs
+
+bower:
+  masonry:
+    files:
+      - "dist/masonry.pkgd.min.js"
+  chosen:
+    files:
+      - "chosen-sprite.png"
+      - "chosen-sprite@2x.png"
+      - "chosen.jquery.js"
+      - "chosen.css"
+  font-awesome:
+    files:
+      - "css/font-awesome.css"
+      - "fonts/*"
+  bootstrap:
+    files:
+      - "dist/css/bootstrap.min.css"
+      - "dist/js/bootstrap.min.js"
+      - "dist/fonts/*"
+    replaces:
+      files:
+        dist/css/bootstrap.min.css:
+          ../fonts: plugins/bootstrap/dist/fonts
+  summernote:
+    files:
+      - "dist/summernote.js"
+      - "dist/summernote.css"
+      - "dist/font/*"
+  moment:
+    files:
+      - "min/moment-with-locales.min.js"
+  jquery:
+    renames:
+      dist/jquery.js: dist/jqueryrename.js
+```
+
+## initialize npm
+
+```
+npm install
+```
+ 
  
 ## LICENSE
 

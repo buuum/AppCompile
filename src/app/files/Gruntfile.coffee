@@ -11,7 +11,7 @@ module.exports = (grunt) ->
         options:
           expand: true
           packageSpecific: "<%= cfg.bower %>"
-        dest: '<%= cfg.paths.assets.root %>/<%= cfg.paths.assets.plugins %>'
+        dest: '<%= cfg.paths.assets.plugins %>'
 
     exec:
       bower:
@@ -27,9 +27,9 @@ module.exports = (grunt) ->
       plugins:
         files: [
           expand: true,
-          cwd: '<%= cfg.paths.assets.root %>/<%= cfg.paths.assets.plugins %>',
+          cwd: '<%= cfg.paths.assets.plugins %>',
           src: ['**/*/*.js', '!minify/**'],
-          dest: '<%= cfg.paths.assets.root %>/<%= cfg.paths.assets.plugins %>/minify'
+          dest: '<%= cfg.paths.assets.plugins %>/minify'
         ]
       app:
         files:
@@ -125,7 +125,7 @@ module.exports = (grunt) ->
 
     clean:
       temp: ["<%= cfg.paths.temp %>"]
-      plugins: ["<%= cfg.paths.assets.root %>/<%= cfg.paths.assets.plugins %>"]
+      plugins: ["<%= cfg.paths.assets.plugins %>"]
       cache: ["<%= cfg.paths.cache %>/*"]
       public: ["<%= cfg.compile.dest %>"]
 

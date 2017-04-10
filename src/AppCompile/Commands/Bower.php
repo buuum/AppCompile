@@ -25,7 +25,7 @@ class Bower extends Command
 
     private function changePaths()
     {
-        $path = $this->dir_root() . '/' . $this->config['paths']['assets']['root'] . '/' . $this->config['paths']['assets']['plugins'] . '/';
+        $path = $this->dir_root() . '/' . $this->config['paths']['assets']['plugins'] . '/';
         $fontplugins = $this->config['bower'];
 
         foreach ($fontplugins as $folder => $plugin) {

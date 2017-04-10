@@ -1,28 +1,34 @@
 paths:
   temp: _tmp
   cache: temp/assets
+  assets:
+    root: httpdocs/assets
+    plugins: httpdocs/assets/plugins
 
 compiler_paths:
   compile1:
     name: default
     dest: app/public2
     files:
+      root: app/_gen
       coffee: app/_gen/coffee
       haml: app/_gen/views
       sass: app/_gen/sass
     assets:
+      root: httpdocs/assets
       css: httpdocs/assets/css
       js: httpdocs/assets/js
       imgsdir: httpdocs/assets/imgs
-
   compile2:
     name: Web
     dest: app/Web/public2
     files:
+      root: app/_gen
       coffee: app/Web/_gen/coffee
       haml: app/Web/_gen/views
       sass: app/Web/_gen/sass
     assets:
+      root: httpdocs/assets/Web
       css: httpdocs/assets/Web/css
       js: httpdocs/assets/Web/js
       imgsdir: httpdocs/assets/Web/imgs
@@ -41,6 +47,10 @@ bower:
     files:
       - "css/font-awesome.css"
       - "fonts/*"
+    replaces:
+      files:
+        css/font-awesome.css:
+          ../fonts: plugins/font-awesome/fonts
   bootstrap:
     files:
       - "dist/css/bootstrap.min.css"
@@ -55,6 +65,10 @@ bower:
       - "dist/summernote.js"
       - "dist/summernote.css"
       - "dist/font/*"
+    replaces:
+      files:
+        dist/summernote.css:
+          font/: plugins/summernote/dist/font/
   moment:
     files:
       - "min/moment-with-locales.min.js"
