@@ -33,12 +33,12 @@ module.exports = (grunt) ->
         ]
       app:
         files:
-          '<%= cfg.compile.assets.js %>/main.js': '<%= cfg.paths.temp %>/js/main1.js'
+          '<%= cfg.compile.assets.js %>/<%= cfg.compile.assets.jsname %>.js': '<%= cfg.paths.temp %>/js/main1.js'
 
     cssmin:
       target:
         files:
-          '<%= cfg.compile.assets.css %>/main.css': '<%= cfg.paths.temp %>/css/app.css'
+          '<%= cfg.compile.assets.css %>/<%= cfg.compile.assets.cssname %>.css': '<%= cfg.paths.temp %>/css/app.css'
 
     compass:
       dist:

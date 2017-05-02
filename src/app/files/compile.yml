@@ -17,7 +17,9 @@ compiler_paths:
     assets:
       root: httpdocs/assets
       css: httpdocs/assets/css
+      cssname: main
       js: httpdocs/assets/js
+      jsname: main
       imgsdir: httpdocs/assets/imgs
   compile2:
     name: Web
@@ -30,7 +32,9 @@ compiler_paths:
     assets:
       root: httpdocs/assets/Web
       css: httpdocs/assets/Web/css
+      cssname: main2
       js: httpdocs/assets/Web/js
+      jsname: main2
       imgsdir: httpdocs/assets/Web/imgs
 
 bower:
