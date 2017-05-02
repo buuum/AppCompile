@@ -163,7 +163,7 @@ module.exports = (grunt) ->
     return
 
   grunt.registerTask 'build', 'Generamos All', (folder = false) =>
-    options.folder = if folder then ":#{folder}/" else ""
+    options.folder = if folder then ":#{folder}" else ""
     grunt.task.run ["buildsass#{options.folder}", "buildcoffee#{options.folder}", "buildhaml#{options.folder}",
       "buildassets#{options.folder}"]
     return
