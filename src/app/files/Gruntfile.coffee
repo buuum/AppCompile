@@ -197,6 +197,7 @@ module.exports = (grunt) ->
       if @compare(parts_copy, parts_)
         options.compile = index
 
+    file_path.reverse()
     join = file_path.join('/')
     options.file = "#{join}/#{namefile}"
     options.filepath = filepath
