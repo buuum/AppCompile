@@ -196,6 +196,7 @@ module.exports = (grunt) ->
         file_path.push parts_copy.pop()
       if @compare(parts_copy, parts_)
         options.compile = index
+        break
 
     file_path.reverse()
     join = file_path.join('/')
