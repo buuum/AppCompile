@@ -6,6 +6,8 @@ module.exports = (grunt) ->
   grunt.initConfig
     cfg: options
 
+    path_separator: if process.platform == "win32" then '\\' else '/'
+
     bower:
       dev:
         options:
@@ -15,13 +17,13 @@ module.exports = (grunt) ->
 
     exec:
       bower:
-        cmd: "<%= cfg.php %>vendor/bin/compile bower"
+        cmd: "<%= cfg.php %>vendor<%= path_separator %>bin<%= path_separator %>compile bower"
       template:
-        cmd: "<%= cfg.php %>vendor/bin/compile template <%= cfg.folder %> <%= cfg.filepath %>"
+        cmd: "<%= cfg.php %>vendor<%= path_separator %>bin<%= path_separator %>compile template <%= cfg.folder %> <%= cfg.filepath %>"
       templatechars:
-        cmd: "<%= cfg.php %>vendor/bin/compile chars <%= cfg.folder %> <%= cfg.filepath %>"
+        cmd: "<%= cfg.php %>vendor<%= path_separator %>bin<%= path_separator %>compile chars <%= cfg.folder %> <%= cfg.filepath %>"
       updateversion:
-        cmd: "<%= cfg.php %>vendor/bin/compile updateversion"
+        cmd: "<%= cfg.php %>vendor<%= path_separator %>bin<%= path_separator %>compile updateversion"
 
     uglify:
       plugins:
